@@ -29,7 +29,13 @@ header img {
   border-radius: 10px;
   box-shadow: #000000 5px 5px 10px;
 }
+.navbar {
+  display: none;
+}
 
+.ham {
+  display: none;
+}
 .navbar-list {
   display: flex;
   list-style: none;
@@ -123,6 +129,7 @@ main {
   border-radius: 16px;
   font-size: 20px;
   text-decoration: none;
+  box-shadow: #000000 0px 5px 10px 3px;
 }
 .mas-info {
   max-width: 1200px;
@@ -340,7 +347,7 @@ main {
   height: 70px;
   box-shadow: #000000 5px 5px 10px;
 }
-#menu-toggle,
+/* #menu-toggle,
 .menu-label {
   display: none;
-}
+} */

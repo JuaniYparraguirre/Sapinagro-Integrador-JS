@@ -1,274 +1,332 @@
 @media (max-width: 992px) {
-    .navbar {
-      gap: 10px;
-    }
-    .navbar-list {
-      background: linear-gradient(to right, #bdc3c7, #2c3e50);
-      position: absolute;
-      top: 103%;
-      width: 90%;
-      left: 5%;
-      right: 5%;
-      border: 3px solid black;
-      border-top: 0;
-      flex-direction: column;
-      border-radius: 0px 0px 10px 10px;
-      padding: 45px 30px;
-      align-items: flex-start;
-      display: none;
-    }
-  
-    .menu-label {
-      display: flex;
-      cursor: pointer;
-      order: 2;
-    }
-    .menu-label img {
-      background: white;
-      height: 70px;
-      width: 25;
-    }
-    #menu-toggle:checked + .navbar-list {
-      display: flex;
-    }
-    .hero-info {
-      /* width: 100%; */
-      text-align: center;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-    }
-    .hero-info h1 {
-      width: 90%;
-      max-width: 500px;
-    }
-    .hero-imagen {
-      display: none;
-    }
-    #about {
-      text-align: center;
-    }
-    .about-tittle h2 {
-      flex-direction: column;
-      align-items: center;
-    }
-    .about-tittle p {
-      flex-direction: column;
-      align-items: center;
-    }
-    .about-cards-container {
-      flex-direction: column;
-    }
-    .about-cards-container2 {
-      flex-direction: column;
-    }
-    #contact {
-      text-align: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-    .contact-container {
-      flex-direction: column;
-    }
-    .list-contact {
-      flex-direction: column;
-    }
-  
-    .new-contact {
-      justify-content: center;
-    }
-  
-    .new-contact form {
-      flex-direction: column;
-      align-items: start;
-    }
+  header {
+    padding: 10px;
   }
-  @media (max-width: 390px) {
-    .navbar {
-      gap: 10px;
-    }
-    .navbar-list {
-      background: linear-gradient(to right, #bdc3c7, #2c3e50);
-      position: absolute;
-      top: 103%;
-      width: 90%;
-      left: 5%;
-      right: 5%;
-      border: 3px solid black;
-      border-top: 0;
-      flex-direction: column;
-      border-radius: 0px 0px 10px 10px;
-      padding: 45px 30px;
-      align-items: flex-start;
-      display: none;
-    }
-  
-    .menu-label {
-      display: flex;
-      cursor: pointer;
-      order: 2;
-    }
-    .menu-label img {
-      background: white;
-      height: 70px;
-      width: 25;
-    }
-    #menu-toggle:checked + .navbar-list {
-      display: flex;
-    }
-    .hero-info {
-      /* width: 100%; */
-      text-align: center;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-    }
-    .hero-info h1 {
-      width: 90%;
-      max-width: 500px;
-    }
-    .hero-imagen {
-      display: none;
-    }
-    #about {
-      text-align: center;
-    }
-    .about-tittle h2 {
-      flex-direction: column;
-      align-items: center;
-    }
-    .about-tittle p {
-      flex-direction: column;
-      align-items: center;
-    }
-    .about-cards-container {
-      flex-direction: column;
-    }
-    .about-cards-container2 {
-      flex-direction: column;
-    }
-    #contact {
-      width: 100%;
-      text-align: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-    .contact-container {
-      flex-direction: column;
-    }
-    .list-contact {
-      flex-direction: column;
-    }
-    .contact-map {
-      width: 100%;
-    }
-  
-    .new-contact {
-      justify-content: center;
-    }
-  
-    .new-contact form {
-      width: 100%;
-      flex-direction: column;
-      align-items: start;
-    }
+  .ham {
+    display: block;
+    top: 30px;
+    right: 30px;
+    background: white;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgb(0, 0, 0 0.5);
   }
-  @media (max-width: 320px){
 
-    header{
-        position: absolute;
-        padding: 5px;
-    }
-
-    .navbar {
-        gap: 10px;
-      }
-      .navbar-list{
-        background: linear-gradient(to right, #bdc3c7, #2c3e50);
-        position: absolute;
-        top: 103%;
-        width: 90%;
-        left: 5%;
-        right: 5%;
-        border: 3px solid black;
-        border-top: 0;
-        flex-direction: column;
-        border-radius: 0px 0px 10px 10px;
-        padding: 45px 30px;
-        align-items: flex-start;
-        display: none;
-      }
-
-      .menu-label img {
-        background: white;
-        height: 70px;
-        width: 25;
-      }
-      #menu-toggle:checked + .navbar-list {
-        display: flex;
-      }
-      .hero-info {
-        /* width: 100%; */
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-      }
-      .hero-info h1 {
-        width: 90%;
-        max-width: 500px;
-      }
-      .hero-imagen {
-        display: none;
-      }
-      #about {
-        text-align: center;
-      }
-      .about-title{
-        text-align: center;
-        padding-right: 10px;
-      }
-      .about-tittle h2 {
-        flex-direction: column;
-        align-items: center;
-      }
-      .about-tittle p {
-        flex-direction: column;
-        align-items: center;
-      }
-      .about-cards-container {
-        flex-direction: column;
-
-      }
-      .about-card{
-        width: 280px;
-      }
-      .about-cards-container2 {
-        flex-direction: column;
-      }
-      #contact {
-        width: 100%;
-        text-align: center;
-        justify-content: center;
-        flex-direction: column;
-      }
-      .contact-container {
-        flex-direction: column;
-      }
-      .list-contact {
-        flex-direction: column;
-      }
-      .contact-map {
-        width: 100%;
-      }
-    
-      .new-contact {
-        justify-content: center;
-      }
-    
-      .new-contact form {
-        width: 100%;
-        flex-direction: column;
-        align-items: start;
-      }
+  .navbar {
+    display: none;
+    background: linear-gradient(to right, #bdc3c7, #2c3e50);
+    position: absolute;
+    top: 100%;
+    width: 992px;
+    left: -3px;
+    height: 60vh;
+    border: 3px solid black;
+    border-top: 0;
+    border-radius: 0px 0px 10px 10px;
+    list-style: none;
+    gap: 10px;
   }
+  .navbar-list {
+    background: transparent;
+    top: 1%;
+
+    flex-direction: column;
+    border-radius: 0px 0px 10px 10px;
+    padding: 5px 16px;
+    align-items: end;
+    justify-content: end;
+    display: flex;
+  }
+
+  .menu-label {
+    display: flex;
+    cursor: pointer;
+    order: 2;
+  }
+
+  /* #menu-toggle:checked + .navbar-list {
+    display: flex;
+  } */
+  #hero {
+    width: 100%;
+  }
+  .hero-info {
+    /* width: 100%; */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  .hero-info h1 {
+    width: 90%;
+    max-width: 500px;
+  }
+  .hero-imagen {
+    display: none;
+  }
+  #about {
+    text-align: center;
+  }
+  .about-tittle h2 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-tittle p {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-cards-container {
+    flex-direction: column;
+  }
+  .about-cards-container2 {
+    flex-direction: column;
+  }
+  #contact {
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .contact-container {
+    flex-direction: column;
+  }
+  .list-contact {
+    flex-direction: column;
+  }
+
+  .new-contact {
+    justify-content: center;
+  }
+
+  .new-contact form {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+@media (max-width: 390px) {
+  .ham {
+    display: block;
+    top: 30px;
+    right: 30px;
+    background: white;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgb(0, 0, 0 0.5);
+  }
+
+  .navbar {
+    display: none;
+    background: linear-gradient(to right, #bdc3c7, #2c3e50);
+    position: absolute;
+    top: 100%;
+    width: 390px;
+    left: -3px;
+    height: 60vh;
+    border: 3px solid black;
+    border-top: 0;
+    border-radius: 0px 0px 10px 10px;
+
+    list-style: none;
+    gap: 10px;
+  }
+  .navbar-list {
+    background: transparent;
+    position: absolute;
+    top: 1%;
+    width: 90%;
+    flex-direction: column;
+    border-radius: 0px 0px 10px 10px;
+    padding: 5px 3px;
+    align-items: flex-end;
+    display: flex;
+  }
+
+  .menu-label {
+    display: flex;
+    cursor: pointer;
+    order: 2;
+  }
+  .menu-label img {
+    background: white;
+    height: 70px;
+    width: 25;
+  }
+  /* #menu-toggle:checked + .navbar-list {
+    display: flex;
+  } */
+  .hero-info {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  .hero-info h1 {
+    width: 90%;
+    max-width: 500px;
+  }
+  .hero-imagen {
+    display: none;
+  }
+  #about {
+    text-align: center;
+  }
+  .about-tittle h2 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-tittle p {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-cards-container {
+    flex-direction: column;
+  }
+  .about-cards-container2 {
+    flex-direction: column;
+  }
+  #contact {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .contact-container {
+    flex-direction: column;
+  }
+  .list-contact {
+    flex-direction: column;
+  }
+  .contact-map {
+    width: 100%;
+  }
+
+  .new-contact {
+    justify-content: center;
+  }
+
+  .new-contact form {
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+  }
+}
+@media (max-width: 320px) {
+  header {
+    position: fixed;
+    padding: 5px;
+  }
+
+  .ham {
+    display: block;
+    top: 30px;
+    right: 30px;
+    background: white;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgb(0, 0, 0 0.5);
+  }
+
+  .navbar {
+    display: none;
+    background: linear-gradient(to right, #bdc3c7, #2c3e50);
+    top: 100%;
+    width: 320px;
+    left: -3px;
+    height: 60vh;
+    border: 3px solid black;
+    border-top: 0;
+    border-radius: 0px 0px 10px 10px;
+    list-style: none;
+    gap: 10px;
+  }
+  .navbar-list {
+    width: 100%;
+    background: transparent;
+    top: 1%;
+    flex-direction: column;
+    border-radius: 0px 0px 10px 10px;
+    padding: 5px 16px;
+    align-items: flex-end;
+    display: flex;
+  }
+
+  /* #menu-toggle:checked + .navbar-list {
+    display: flex;
+  } */
+  #hero {
+    width: 100%;
+  }
+  .hero-info {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  .hero-info h1 {
+    width: 90%;
+    max-width: 500px;
+  }
+  .hero-imagen {
+    display: none;
+  }
+  #about {
+    text-align: center;
+  }
+  .about-title {
+    text-align: center;
+    padding-right: 10px;
+  }
+  .about-tittle h2 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-tittle p {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-cards-container {
+    flex-direction: column;
+  }
+  .about-card {
+    width: 280px;
+  }
+  .about-card h3 {
+    padding: 0px;
+    font-size: 25px;
+  }
+  .about-cards-container2 {
+    flex-direction: column;
+  }
+  #contact {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .contact-container {
+    flex-direction: column;
+  }
+  .list-contact {
+    flex-direction: column;
+  }
+  .contact-map {
+    width: 100%;
+  }
+
+  .new-contact {
+    justify-content: center;
+  }
+
+  .new-contact form {
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+  }
+}

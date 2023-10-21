@@ -1,10 +1,27 @@
+// const menuIcon = document.querySelector(".ham");
+// const navList = document.querySelector(".navbar");
 
-  // Obtén una referencia al elemento del menú de hamburguesas y al elemento de la lista de navegación
-  const menuIcon = document.querySelector('.menu-label');
-  const navList = document.querySelector('.navbar-list');
+// menuIcon.addEventListener("click", () => {
+//   if (navList.style.display === "none" || navList.style.display === "") {
+//     navList.style.display = "block";
+//   } else {
+//     navList.style.display = "none";
+//   }
+// });
 
-  // Agrega un evento clic al elemento del menú de hamburguesas
-  menuIcon.addEventListener('click', () => {
-    // Alterna la clase 'active' en el elemento de la lista de navegación para mostrar u ocultar el menú
-    navList.classList.toggle('active');
-  });
+const menuIcon = document.querySelector(".ham");
+const navList = document.querySelector(".navbar");
+
+menuIcon.addEventListener("click", () => {
+  if (navList.style.display === "none" || navList.style.display === "") {
+    navList.style.display = "block";
+  } else {
+    navList.style.display = "none";
+  }
+
+  // Agregar o quitar la clase de transición después de cambiar el estilo
+  navList.classList.add("menu-transition");
+  setTimeout(() => {
+    navList.classList.remove("menu-transition");
+  }, 5000); // Esto debe coincidir con la duración de la transición en milisegundos
+});

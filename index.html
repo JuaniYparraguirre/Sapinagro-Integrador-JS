@@ -3,29 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Entregas-Nucba</title>
+    <title>SapinagroWeb</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
   <body>
-    <header> 
-    
+    <header>
       <img src="./img/—Pngtree—logo_3718351.png" alt="logo" />
+      <img
+        class="ham"
+        src="./img/hamburger-menu-icon-png-white-15.jpg"
+        alt="menu-icon"
+      />
       <nav class="navbar">
-        <label for="menu-toggle" class="menu-label">
-          <img class="ham"
-            src="./img/hamburger-menu-icon-png-white-15.jpg"
-            alt="menu-icon"
-          />
-        </label>
-        <input type="checkbox" id="menu-toggle" />
+        <!-- <label for="menu-toggle" class="menu-label"> </label>
+        <input type="checkbox" id="menu-toggle" /> -->
 
         <ul class="navbar-list">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">Anuncios</a></li>
-          <li><a href="#contact">Contactos</a></li>
-          <li><a href="#">Ultimos publicados</a></li>
-          
+          <li><a class="magia" href="#hero">Home</a></li>
+          <li><a class="magia" href="#about">Anuncios</a></li>
+          <li><a class="magia" href="#contact">Contactos</a></li>
+          <li><a class="magia" href="#">Ultimos publicados</a></li>
         </ul>
       </nav>
     </header>
@@ -184,11 +182,7 @@
               cols="30"
               required
             ></textarea>
-            <input
-              class="new-contact-buttom"
-              type="submit"
-              value="📨 Enviar..."
-            />
+            <input class="new-contact-buttom" type="submit" value="📨" />
           </form>
         </div>
       </section>
