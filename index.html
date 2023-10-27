@@ -11,17 +11,20 @@
     <header>
       <img class="icon-img" src="./img/—Pngtree—logo_3718351.png" alt="logo" />
       <nav class="navbar">
-        <img
-          class="ham"
-          src="./img/hamburger-menu-icon-png-white-15.jpg"
-          alt="menu-icon"
-        />
+        <div class="menu-ham">
+          <img
+            class="ham"
+            src="./img/hamburger-menu-icon-png-white-15.jpg"
+            alt="menu-icon"
+          />
+        </div>
 
         <!-- <label for="menu-toggle" class="menu-label"> </label>
         <input type="checkbox" id="menu-toggle" /> -->
 
         <ul class="navbar-list">
           <li><a href="#hero">Menu de Inicio</a></li>
+          <li><a href="#productos">Nuestros Productos</a></li>
           <li><a href="#about">Anuncios</a></li>
           <li><a href="#contact">Contactos</a></li>
           <!-- <li><a href="#">Ultimos publicados</a></li> -->
@@ -141,7 +144,18 @@
           </div>
         </div>
       </section>
-
+      <section id="products">
+        <h2>Nuestros Productos</h2>
+        <div class="categories">
+          <button class="category active" data-category="allochis">
+            Allochis
+          </button>
+          <button class="category" data-category="gimetal">Gimetal</button>
+          <button class="category" data-category="ascanelli">Ascanelli</button>
+          <button class="category" data-category="procor">Procor</button>
+        </div>
+        <div class="products-container"></div>
+      </section>
       <section id="contact">
         <div class="contact-container">
           <h2>Contactanos</h2>
@@ -197,6 +211,7 @@
     <footer id="footer">
       <img class="footer-img" src="./img/LOGO SAPINAGRO.png" alt="logo" />
     </footer>
-    <script src="./main.js"></script>
+    <script src="data.js"></script>
+    <script src="/main.js"></script>
   </body>
 </html>
