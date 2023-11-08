@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px solid red; */
+  border: 1px solid red;
   font-family: "Averia Libre", cursive;
 }
 :root {
@@ -267,6 +267,15 @@ main {
   justify-content: center;
   gap: 15px;
 }
+#products {
+  max-width: 1200px;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
 #products h2 {
   font-family: "Dancing Script", cursive;
   color: rgb(208, 255, 0);
@@ -299,19 +308,19 @@ main {
   align-items: center;
   justify-content: center;
   gap: 15px;
-  padding: 40px 0;
+  padding: 10px;
   max-width: 1200px;
 }
 
 .product {
   background: var(--secondary);
-  padding: 20px;
+  padding: 10px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   -webkit-animation: fade-in 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fade-in 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
