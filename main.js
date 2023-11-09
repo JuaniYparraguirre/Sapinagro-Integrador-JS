@@ -59,14 +59,14 @@ const createProductTemplate = (product) => {
     <!-- Top -->
     <div class="product-top">
       <h3>${name}</h3>
-      <p>Current Bid</p>
+      <p>Precio de referencia</p>
     </div>
   
     <!-- mid -->
     <div class="product-mid">
       <div class="product-user">
-        <img src="${cardImg}" alt="${user}" />
-        <p>@${user}</p>
+        
+        <p>${user}</p>
       </div>
       <span>${bid}</span>
     </div>
@@ -77,7 +77,7 @@ const createProductTemplate = (product) => {
       data-name='${name}'
       data-bid='${bid}' 
       data-img='${cardImg}'
-      >Add</button>
+      >Cotizar</button>
     </div>
   </div>
   </div>`;

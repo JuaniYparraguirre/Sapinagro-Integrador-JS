@@ -1,9 +1,9 @@
 const productsData = [
   {
     id: 1,
-    name: "Golden Messi",
+    name: "Allochis",
     bid: 6.89,
-    user: "thetroncous",
+    user: "16 Surcos a 52,5cm",
     category: "allochis",
 
     cardImg: "./assets/img/products/goldenmessi.png",
