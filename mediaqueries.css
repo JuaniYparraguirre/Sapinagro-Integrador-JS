@@ -8,7 +8,7 @@
   header {
     padding: 10px;
   }
-  .ham {
+  .menu-icon {
     display: block;
     top: 30px;
     right: 30px;
@@ -43,7 +43,7 @@
     padding: 5px 16px;
     align-items: end;
     justify-content: end;
-    display: flex;
+    display: none;
   }
 
   .menu-label {
@@ -118,7 +118,7 @@
 }
 
 @media (max-width: 390px) {
-  .ham {
+  .menu-icon {
     display: block;
     top: 30px;
     right: 30px;
@@ -162,14 +162,7 @@
     cursor: pointer;
     order: 2;
   }
-  .menu-label img {
-    background: white;
-    height: 70px;
-    width: 25;
-  }
-  /* #menu-toggle:checked + .navbar-list {
-    display: flex;
-  } */
+
   .hero-info {
     width: 100%;
     text-align: center;
@@ -247,7 +240,7 @@
     padding: 5px;
   }
 
-  .ham {
+  .menu-icon {
     display: block;
     top: 30px;
     right: 30px;

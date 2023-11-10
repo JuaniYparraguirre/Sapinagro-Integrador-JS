@@ -1,7 +1,7 @@
 const productsData = [
   {
     id: 1,
-    name: "Allochis",
+    name: "Cabezal Maicero Hibrido",
     bid: 6.89,
     user: "16 Surcos a 52,5cm",
     category: "allochis",

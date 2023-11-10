@@ -1,14 +1,14 @@
 //FUNCION PARA ABRIR EL MENU HAMBURGUEZA//
-const menuIcon = document.querySelector(".ham");
-const navList = document.querySelector(".navbar");
+// const menuIcon = document.querySelector(".ham");
+// const navList = document.querySelector(".navbar");
 
-menuIcon.addEventListener("click", () => {
-  if (navList.style.display === "none" || navList.style.display === "") {
-    navList.style.display = "block";
-  } else {
-    navList.style.display = "none";
-  }
-});
+// menuIcon.addEventListener("click", () => {
+//   if (navList.style.display === "none" || navList.style.display === "") {
+//     navList.style.display = "block";
+//   } else {
+//     navList.style.display = "none";
+//   }
+// });
 
 // Contenedor de productos
 const productsContainer = document.querySelector(".products-container");
@@ -59,14 +59,14 @@ const createProductTemplate = (product) => {
     <!-- Top -->
     <div class="product-top">
       <h3>${name}</h3>
-      <p>Precio de referencia</p>
+      <div class="product-med">
+      <p>${user}</p></div>
     </div>
   
     <!-- mid -->
     <div class="product-mid">
       <div class="product-user">
-        
-        <p>${user}</p>
+        <p>Precio de referencia</p>
       </div>
       <span>${bid}</span>
     </div>
@@ -136,8 +136,14 @@ const isInactiveFiltreBtn = (element) => {
   );
 };
 
+//FUNCION PARA ABRIR EL MENU HAMBURGUEZA//
+const toggleCart = () => {
+  cartMenu.classList.toggle("open-cart");
+};
 const init = () => {
   renderProducts(appState.products[0]);
   categoriesContainer.addEventListener("click", applyFilter);
+  categoriesContainer.addEventListener("click", applyFilter);
+  cartBtn.addEventListener("click", toggleCart);
 };
 init();
