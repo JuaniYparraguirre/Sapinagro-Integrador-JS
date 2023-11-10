@@ -139,11 +139,47 @@ const isInactiveFiltreBtn = (element) => {
 //FUNCION PARA ABRIR EL MENU HAMBURGUEZA//
 const toggleCart = () => {
   cartMenu.classList.toggle("open-cart");
+
+  if (barsMenu.classList.contains("open-menu")) {
+    barsMenu.classList.remove("open-menu");
+    return;
+  }
+  overlay.classList.toggle("show-overlay");
 };
+
+const toggleMenu = () => {
+  barsMenu.classList.toggle("open-menu");
+  if (cartMenu.classList.contains("open-cart")) {
+    cartMenu.classList.remove("open-cart");
+    return;
+  }
+  overlay.classList.toggle("show-overlay");
+};
+const closeOnOverlayClick = () => {
+  barsMenu.classList.remove("open-menu");
+  cartMenu.classList.remove("open-cart");
+  overlay.classList.remove("show-overlay");
+};
+
+const closeOnScroll = () => {
+  if (
+    barsMenu.classList.contains("open-menu") &&
+    cartMenu.classList.contains("open-cart")
+  ) {
+    return;
+  }
+  barsMenu.classList.remove("open-menu");
+  cartMenu.classList.remove("open-cart");
+  overlay.classList.remove("show-overlay");
+};
+
 const init = () => {
   renderProducts(appState.products[0]);
   categoriesContainer.addEventListener("click", applyFilter);
   categoriesContainer.addEventListener("click", applyFilter);
   cartBtn.addEventListener("click", toggleCart);
+  menuBtn.addEventListener("click", toggleMenu);
+  overlay.addEventListener("click", closeOnOverlayClick);
+  window.addEventListener("scroll", closeOnScroll);
 };
 init();
