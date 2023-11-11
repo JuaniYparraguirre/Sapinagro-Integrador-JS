@@ -172,6 +172,179 @@ const closeOnScroll = () => {
   cartMenu.classList.remove("open-cart");
   overlay.classList.remove("show-overlay");
 };
+//Logica carrito
+
+//Funcio para crae el template del producto en el carrrito
+const createCartProductTemplate = (cartProduct) => {
+  const { bid, id, img, name, quantity } = cartProduct;
+  return `<div class="cart-item"> 
+           <img src="${img}" alt="${name}"/>
+           <!----Info del producto----!>
+           <div class="item-info">
+           <h3 class="item-title">${name}</h3>
+           <p class="item-bid">Currend bid</p>
+           <span class="item-price">${bid}</span>
+           </div>
+           <!-- Botones --!>
+           <div class="item-handler">
+           <span class="quantity-handler down" data-id=${id}>-</span>
+           <span class="item-quantity">${quantity}</span>
+           <span class="quantity-handler up" data-id=${id}> + </span>
+           </div>
+           </div>
+           `;
+};
+
+//Render Carrito
+const renderCart = () => {
+  if (!cart.length) {
+    productsCart.innerHTML = `<p class="">Cargamos el carreton con tu nueva maquinaria ?</p>`;
+    return;
+  }
+  productsCart.innerHTML = cart.map(createCartProductTemplate).join("");
+};
+
+//funcion para obtener el total de la compra
+const getCartTotal = () => {
+  return cart.reduce((acc, cur) => acc + Number(cur.bid) * cur.quantity, 0);
+};
+
+// Funcion para obtener el total de la carrito
+const showCartTotal = () => {
+  total.innerHTML = `${getCartTotal().toFixed(2)} U$S`;
+};
+
+//funcion para actualizar la burbuja con la cantidad de productos en el cart
+
+const renderCartBubble = () => {
+  cartBubble.textContent = cart.reduce((acc, cur) => acc + cur.quantity, 0);
+};
+
+//Funcion para habilitar o desabilitar botones
+
+const disableBtn = (btn) => {
+  if (!cart.length) {
+    btn.classList.add("disabled");
+  } else {
+    btn.classList.remove("disabled");
+  }
+};
+
+//Funcion para ejecutar funciones necesarias para actualizar el estado del carrito
+const updateCartState = () => {
+  saveCart();
+  renderCart();
+  showCartTotal();
+  renderCartBubble();
+  disableBtn(buyBtn);
+  disableBtn(deleteBtn);
+};
+
+const addProduct = (e) => {
+  if (!e.target.classList.contains("btn-add")) return;
+  const product = e.target.dataset;
+  if (isExistingCartProduct(product)) {
+    addUnitProduct(product);
+    showSuccessModal("Realizaste otra carga al camión!");
+  } else {
+    createCartProduct(product);
+    showSuccessModal("Cargaste una maquinaria al camión!");
+  }
+  updateCartState();
+  console.log(cart);
+};
+
+const addUnitProduct = (product) => {
+  cart = cart.map((cartProduct) =>
+    cartProduct.id === product.id
+      ? { ...cartProduct, quantity: cartProduct.quantity + 1 }
+      : cartProduct
+  );
+};
+
+const isExistingCartProduct = (product) => {
+  return cart.find((item) => item.id === product.id);
+};
+
+const createCartProduct = (product) => {
+  cart = [...cart, { ...product, quantity: 1 }];
+};
+
+// Funcion para manejar el evento click de + en el carrito
+const handlePlusBtnEvent = (id) => {
+  const existingCartProduct = cart.find((item) => item.id === id);
+  addUnitProduct(existingCartProduct);
+};
+
+//Funcion para manejar el evento click de - en el carrito
+
+const handleMinusBtnEvent = (id) => {
+  const existingCartProduct = cart.find((item) => item.id === id);
+  if (existingCartProduct.quantity === 1) {
+    if (window.confirm("Deseas eliminar el producto")) {
+      removeProducFromCart(existingCartProduct);
+    }
+    return;
+  }
+  substractProductUnit(existingCartProduct);
+};
+
+const substractProductUnit = (existingCartProduct) => {
+  cart = cart.map((product) => {
+    return product.id === existingCartProduct.id
+      ? { ...product, quantity: Number(product.quantity) - 1 }
+      : product;
+  });
+};
+
+const removeProducFromCart = (existingCartProduct) => {
+  cart = cart.filter((product) => product.id !== existingCartProduct.id);
+  updateCartState();
+};
+// Funcion para manejar la cantidad de los productos en el carro
+const handleQuantity = (e) => {
+  if (e.target.classList.contains("up")) {
+    handlePlusBtnEvent(e.target.dataset.id);
+  } else if (e.target.classList.contains("down")) {
+    handleMinusBtnEvent(e.target.dataset.id);
+  }
+  updateCartState();
+};
+
+const resetCartItems = () => {
+  cart = [];
+  updateCartState();
+};
+const completeCartAction = (confirmMsg, successMsg) => {
+  if (!cart.length) return;
+  if (window.confirm(confirmMsg)) {
+    resetCartItems();
+    alert(successMsg);
+  }
+};
+
+const completeBuy = () => {
+  completeCartAction(
+    "Deseas pedir una cotización?",
+    "Enviaremos un mail con su orden. Gracias!"
+  );
+};
+
+const deleteCart = () => {
+  completeCartAction(
+    "Deseas bajar la carga del carreton?",
+    "No hay carga en el camión!"
+  );
+};
+
+const showSuccessModal = (msg) => {
+  successModal.classList.add("active-modal");
+  successModal.textContent = msg;
+
+  setTimeout(() => {
+    successModal.classList.remove("active-modal");
+  }, 1500);
+};
 
 const init = () => {
   renderProducts(appState.products[0]);
@@ -181,5 +354,13 @@ const init = () => {
   menuBtn.addEventListener("click", toggleMenu);
   overlay.addEventListener("click", closeOnOverlayClick);
   window.addEventListener("scroll", closeOnScroll);
+  productsContainer.addEventListener("click", addProduct);
+  productsCart.addEventListener("click", handleQuantity);
+  document.addEventListener("DOMContentLoaded", renderCart);
+  buyBtn.addEventListener("click", completeBuy);
+  deleteBtn.addEventListener("click", deleteCart);
+  disableBtn(buyBtn);
+  disableBtn(deleteBtn);
+  renderCartBubble(cart);
 };
 init();

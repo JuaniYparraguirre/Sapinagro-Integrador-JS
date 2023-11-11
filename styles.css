@@ -56,10 +56,114 @@ header {
   transform: translate(200%);
   transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
-
-.cart::-webkit-scrollbar {
-  display: none;
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
+.cart h2 {
+  color: var(--text-white);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #2323234e;
+  padding: 20px;
+  border: 1px solid var(--electric);
+  border-radius: 10px;
+}
+
+.cart-item img {
+  height: 65px;
+  width: 65px;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 110px;
+}
+
+.item-title {
+  color: var(--text-white);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.item-bid {
+  color: var(--text-gray);
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.item-price {
+  background: linear-gradient(to right, #30cfd0, #c43ad6);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.item-handler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.quantity-handler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 5px;
+  color: var(--text-white);
+  font-weight: 400;
+}
+
+.item-quantity {
+  color: var(--text-gray);
+}
+
+.up {
+  border: 1px solid var(--electric);
+}
+
+.down {
+  /* background-color: var(--secondary); */
+  border: 1px solid var(--electric);
+}
+
+.divider {
+  margin-top: 20px;
+  border: 0.5px solid var(--electric);
+  width: 100%;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+}
+
+.cart-total p {
+  color: var(--text-white);
+  font-weight: 700;
+}
+
+.cart-total span {
+  color: var(--text-white);
+  font-weight: 400;
+  font-size: 18px;
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -437,7 +541,7 @@ main {
 .btn-delete {
   cursor: pointer;
   padding: 10px 35px;
-  color: var(--bg-white);
+  color: var(#2c3e50);
   border-radius: 10px;
   border: none;
   transition: 0.3s all ease-out;
@@ -445,7 +549,7 @@ main {
 
 .btn-buy,
 .btn-add {
-  background: var(--primary);
+  background: var(#2c3e50);
 }
 
 .btn-buy,
@@ -459,7 +563,7 @@ main {
 }
 
 .btn-delete:hover {
-  background: var(--primary);
+  background: var(#2c3e50);
   transition: 0.3s all ease-in;
 }
 .btn-load {
@@ -581,4 +685,39 @@ main {
   width: 300px;
   height: 70px;
   box-shadow: #000000 5px 5px 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.disabled {
+  background-color: var(--text-gray);
+  color: white;
+  cursor: not-allowed;
+  border: none;
+}
+.disabled:hover {
+  background-color: var(--text-gray);
+  color: white;
+  cursor: not-allowed;
+  border: none;
+}
+.add-modal {
+  padding: 15px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-white);
+  background-color: green;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  transition: all 0.5s ease-out;
+  transform: translateY(200%);
+}
+
+.active-modal {
+  transform: translateY(0);
+  transition: all 0.5s ease-in;
 }
