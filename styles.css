@@ -649,10 +649,16 @@ main {
   display: flex;
   flex-direction: column;
   font-style: italic;
+  gap: 10px;
+  font-size: 20px;
+  font-family: "Dancing Script", cursive;
+  text-shadow: rgb(208, 255, 0) 0px 5px 5px;
 }
 
 .new-contact input {
-  background-color: rgb(187, 187, 187);
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 600;
   width: 50%;
   height: 30px;
   border-radius: 10px;
@@ -660,16 +666,22 @@ main {
   border: solid 2px black;
 }
 .new-contact textarea {
-  background-color: rgb(187, 187, 187);
+  display: flex;
+
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 600;
   border-radius: 16px;
   border: solid 2px black;
 }
 .new-contact-buttom {
-  font-size: 20px;
-  font-style: italic;
-  font-weight: 600;
+  border-radius: 10px;
+  width: 50%;
+  font-size: 25px;
 }
-
+#miEmail {
+  opacity: 0;
+}
 #footer {
   background: linear-gradient(to right, #bdc3c7, #2c3e50);
   display: flex;

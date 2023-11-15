@@ -199,21 +199,17 @@
         <div class="new-contact">
           <h3>Deje aquí su consulta:</h3>
 
-          <form action="enviar_correo.php" method="POST">
-            <label for="nombre">✔ Nombre :</label>
-            <input type="text" id="nombre" name="nombre" required />
-            <label for="apellido">✔ Apellido :</label>
-            <input type="text" id="apellido" name="apellido" required />
-            <label for="mensaje">✔ Su consulta 💬</label>
-            <textarea
-              id="mensaje"
-              name="mensaje"
-              rows="4"
-              cols="30"
-              required
-            ></textarea>
-            <input class="new-contact-buttom" type="submit" value="📨" />
+          <form id="form" action="" class="form">
+            <label for="name">✔ Nombre:</label>
+            <input type="text" id="name" name="name" required />
+            <label for="email">✔ Email:</label>
+            <input type="text" id="email" name="email" required />
+            <label for="message">✔ Su consulta 💬</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit" class="new-contact-buttom">📨</button>
+            <small id="form__error"></small>
           </form>
+          <a href="mailto:juaniyparraguirre9@gmail.com" id="miEmail">mail</a>
         </div>
       </section>
     </main>

@@ -39,6 +39,16 @@ const deleteBtn = document.querySelector(".btn-delete");
 const productsCart = document.querySelector(".cart-container");
 // Modal de success
 const successModal = document.querySelector(".add-modal");
+//Contactos de email
+const $form = document.querySelector("#form");
+//Button de email
+const $buttonMailto = document.querySelector("#miEmail");
+//Validacion del email
+const emailInput = document.getElementById("email");
+//Validacion del nombre
+const nameInput = document.getElementById("name");
+//Mensajes de error
+const errorMessage = document.getElementById("form__error");
 
 // Seteamos el carrito
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -251,7 +261,6 @@ const addProduct = (e) => {
     showSuccessModal("Cargaste una maquinaria al camión!");
   }
   updateCartState();
-  console.log(cart);
 };
 
 const addUnitProduct = (product) => {
@@ -345,6 +354,18 @@ const showSuccessModal = (msg) => {
     successModal.classList.remove("active-modal");
   }, 1500);
 };
+//Formulario de contacto funcional
+function handleSubmit(event) {
+  event.preventDefault();
+  const form = new FormData(this);
+  $buttonMailto.setAttribute(
+    "href",
+    `mailto:juaniyparraguirre9@gmail.com?subject=nombre ${form.get(
+      "name"
+    )} correo ${form.get("email")}&body=${form.get("message")}`
+  );
+  $buttonMailto.click();
+}
 
 const init = () => {
   renderProducts(appState.products[0]);
@@ -362,5 +383,6 @@ const init = () => {
   disableBtn(buyBtn);
   disableBtn(deleteBtn);
   renderCartBubble(cart);
+  $form.addEventListener("submit", handleSubmit);
 };
 init();
