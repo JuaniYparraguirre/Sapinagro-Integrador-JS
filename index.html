@@ -9,8 +9,12 @@
   </head>
   <body>
     <header>
-      <img class="icon-img" src="./img/—Pngtree—logo_3718351.png" alt="logo" />
       <nav class="navbar">
+        <img
+          class="icon-img"
+          src="./img/—Pngtree—logo_3718351.png"
+          alt="logo"
+        />
         <div class="menu-label">
           <img
             class="menu-icon"
@@ -27,8 +31,9 @@
           <!-- <li><a href="#">Ultimos publicados</a></li> -->
         </ul>
         <div class="cart-label">
-          <i class="fa-solid fa-cart-shopping camion-carrito">
+          <i class="fa-solid fa-cart-shopping">
             <div class="cart-bubble">0</div>
+            <img class="camion-carrito" src="./img/camion-carrito.png" alt="" />
           </i>
           <!-- <img class="carrito" src="img/camion-carrito.png" alt="" />-->
         </div>
@@ -197,19 +202,70 @@
         </div>
 
         <div class="new-contact">
-          <h3>Deje aquí su consulta:</h3>
+          <form id="register-form" action="" class="form__container" novalidate>
+            <p class="form__title">Deje aquí su consulta:</p>
 
-          <form id="form" action="" class="form">
-            <label for="name">✔ Nombre:</label>
-            <input type="text" id="name" name="name" required />
-            <label for="email">✔ Email:</label>
-            <input type="text" id="email" name="email" required />
-            <label for="message">✔ Su consulta 💬</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            <button type="submit" class="new-contact-buttom">📨</button>
+            <div class="form__field">
+              <input
+                type="text"
+                id="name"
+                class="form__input"
+                name="name"
+                placeholder="✔ Nombre:"
+                autocomplete="off"
+              />
+              <small></small>
+            </div>
+            <div class="form__field">
+              <input
+                type="text"
+                placeholder="✔ Apellido"
+                class="form__input"
+                id="lastName"
+                autocomplete="off"
+              />
+              <small></small>
+            </div>
+            <div class="form__field">
+              <input
+                type="text"
+                placeholder="✔ Telefono"
+                class="form__input"
+                id="phone"
+                autocomplete="off"
+              />
+              <small></small>
+            </div>
+
+            <div class="form__field">
+              <input
+                type="email"
+                id="email"
+                class="form__input"
+                name="email"
+                placeholder="✔ Email:"
+                autocomplete="off"
+              />
+              <small></small>
+            </div>
+
+            <div class="form__field">
+              <textarea
+                id="message"
+                class="form__input"
+                name="message"
+                rows="4"
+                placeholder="✔ Su consulta 💬"
+                required
+                autocomplete="off"
+              ></textarea>
+              <small></small>
+            </div>
+
+            <input type="submit" class="form__submit__btn" value="📨" />
             <small id="form__error"></small>
           </form>
-          <a href="mailto:juaniyparraguirre9@gmail.com" id="miEmail">mail</a>
+          <!-- <a href="mailto:juaniyparraguirre9@gmail.com" id="miEmail">mail</a> -->
         </div>
       </section>
     </main>

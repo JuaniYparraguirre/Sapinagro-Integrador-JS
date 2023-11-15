@@ -40,19 +40,28 @@ const productsCart = document.querySelector(".cart-container");
 // Modal de success
 const successModal = document.querySelector(".add-modal");
 //Contactos de email
-const $form = document.querySelector("#form");
+const $form = document.getElementById("register-form");
 //Button de email
 const $buttonMailto = document.querySelector("#miEmail");
 //Validacion del email
 const emailInput = document.getElementById("email");
 //Validacion del nombre
 const nameInput = document.getElementById("name");
+//Validacion del Apellido
+const LastNameInput = document.getElementById("lastName");
+//Validacion del Telefono
+const phoneInput = document.getElementById("phone");
 //Mensajes de error
 const errorMessage = document.getElementById("form__error");
 
 // Seteamos el carrito
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
+//Guardar el email en LS
+const users = JSON.parse(localStorage.getItem("users")) || [];
 
+const saveValidToLocalStorage = () => {
+  localStorage.setItem("users", JSON.stringify(users));
+};
 // Funcion para guardar en el LS
 const saveCart = () => {
   localStorage.setItem("cart", JSON.stringify(cart));
@@ -360,13 +369,130 @@ function handleSubmit(event) {
   const form = new FormData(this);
   $buttonMailto.setAttribute(
     "href",
-    `mailto:juaniyparraguirre9@gmail.com?subject=nombre ${form.get(
+    `mailto:juaniyparraguirre9@gmail.com?subject=nombre: ${form.get(
       "name"
-    )} correo ${form.get("email")}&body=${form.get("message")}`
+    )} tel: ${form.get("text")} correo: ${form.get("email")}&body=${form.get(
+      "message"
+    )}`
   );
+
   $buttonMailto.click();
 }
 
+//Funciones Auxiliares de validaciones//
+const isEmpy = (input) => {
+  return !input.value.trim().length;
+};
+
+const isBetween = (input, min, max) => {
+  return input.value.length >= min && input.value.length <= max;
+};
+
+const showError = (input, message) => {
+  const formField = input.parentElement;
+  formField.classList.add("error");
+
+  const error = formField.querySelector("small");
+  error.style.display = "block";
+  error.textContent = message;
+};
+
+const isPhoneValid = (input) => {
+  const re = /^\(?\d{2}\)?[\s\.-]?\d{4}[\s\.-]?\d{4}$/;
+  return re.test(input.value.trim());
+};
+//Regex para validar el email ---->
+const isEmailValid = (input) => {
+  const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+  return re.test(input.value.trim());
+};
+//Validar si el email esta guardado
+const isExistingEmail = (input) => {
+  return users.some((user) => user.email === input.value.trim());
+};
+const showSuccess = (input) => {
+  const formField = input.parentElement;
+  formField.classList.remove("error");
+  formField.classList.add("success");
+  const error = formField.querySelector("small");
+  error.textContent = "";
+};
+//Validacion del name
+const checkInput = (input) => {
+  let valid = false;
+  const MIN_CHARACTERS = 3;
+  const MAX_CHARACTERS = 25;
+
+  if (isEmpy(input)) {
+    showError(input, "Este campo es obligatorio");
+    return;
+  }
+  if (!isBetween(input, MIN_CHARACTERS, MAX_CHARACTERS)) {
+    showError(
+      input,
+      `Este campo debe tener entre ${MIN_CHARACTERS} y ${MAX_CHARACTERS} caracteres`
+    );
+    return;
+  }
+  showSuccess(input);
+  valid = true;
+  return valid;
+};
+//Validacion del telefono
+const checkPhone = (input) => {
+  let valid = false;
+  if (isEmpy(input)) {
+    showError(input, "El telefono es obligatorio");
+    return;
+  }
+  if (!isPhoneValid(input)) {
+    showError(input, "El telefono no es valido");
+    return;
+  }
+  showSuccess(input);
+  valid = true;
+  return valid;
+};
+//Validacion del email
+const checkEmail = (input) => {
+  let valid = false;
+  if (isEmpy(input)) {
+    showError(input, "El email es obligatorio");
+    return;
+  }
+  if (!isEmailValid(input)) {
+    showError(input, "El email no es valido");
+    return;
+  }
+  if (isExistingEmail(input)) {
+    showError(input, "El email ya esta registrado");
+    return;
+  }
+  showSuccess(input);
+  valid = true;
+  return valid;
+};
+
+// Validacion del Form
+const validateForm = (e) => {
+  e.preventDefault();
+  let isNameValid = checkInput(nameInput);
+  let isLastNameValid = checkInput(LastNameInput);
+  let isPhoneValid = checkPhone(phoneInput);
+  let isEmailValid = checkEmail(emailInput);
+  let isValidForm =
+    isNameValid && isLastNameValid && isPhoneValid && isEmailValid;
+  if (isValidForm) {
+    users.push({
+      name: nameInput.value,
+      lastName: LastNameInput.value,
+      phone: phoneInput.value,
+      email: emailInput.value,
+    });
+    saveValidToLocalStorage(users);
+    alert("Tu consulta fue enivada");
+  }
+};
 const init = () => {
   renderProducts(appState.products[0]);
   categoriesContainer.addEventListener("click", applyFilter);
@@ -384,5 +510,10 @@ const init = () => {
   disableBtn(deleteBtn);
   renderCartBubble(cart);
   $form.addEventListener("submit", handleSubmit);
+  nameInput.addEventListener("input", () => checkInput(nameInput));
+  LastNameInput.addEventListener("input", () => checkInput(LastNameInput));
+  emailInput.addEventListener("input", () => checkEmail(emailInput));
+  phoneInput.addEventListener("input", () => checkPhone(phoneInput));
+  $form.addEventListener("submit", validateForm);
 };
 init();

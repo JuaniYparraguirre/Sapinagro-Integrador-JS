@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px solid red; */
+  border: 1px solid red;
   font-family: "Averia Libre", cursive;
 }
 :root {
@@ -56,6 +56,7 @@ header {
   transform: translate(200%);
   transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
+
 .cart-container {
   display: flex;
   flex-direction: column;
@@ -165,29 +166,31 @@ header {
 }
 
 .navbar {
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 .camion-carrito {
-  font-weight: 600;
-  border-radius: 10px;
-  font-size: 18px;
-  margin-right: 1rem;
-  color: var(--text-white);
-  cursor: pointer;
-  position: relative;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+
+  top: 0.8vh;
+  right: 5vh;
 }
 .cart-bubble {
   position: absolute;
-  top: -8px;
-  right: -8px;
+  top: 3vh;
+  right: 20vh;
   text-align: center;
-  background: var(--primary);
-  color: var(--text-white);
-  font-size: 10px;
+  background: var(--black);
+  color: var(--primari);
+  font-size: 40px;
   font-weight: 500;
-  height: 18px;
-  width: 18px;
+  height: 28px;
+  width: 28px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -230,9 +233,9 @@ a {
   text-decoration: none;
   list-style: none;
   color: rgb(208, 255, 0);
-  font-weight: 900;
+  font-weight: 700;
   font-family: "Dancing Script", cursive;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 main {
@@ -634,54 +637,103 @@ main {
 .new-contact {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding-right: 50%;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
+  margin-top: 30px;
+
+  width: 100%;
 }
-.new-contact h3 {
+.form__title {
   font-family: "Dancing Script", cursive;
   text-shadow: rgb(208, 255, 0) 0px 5px 5px;
   /* padding: 1px 20px 20px; */
-  font-size: 30px;
-  padding-bottom: 10px;
+  font-size: 50px;
+  margin-bottom: 10px;
 }
-.new-contact form {
+.form__container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-style: italic;
-  gap: 10px;
+  gap: 3px;
   font-size: 20px;
   font-family: "Dancing Script", cursive;
   text-shadow: rgb(208, 255, 0) 0px 5px 5px;
 }
-
-.new-contact input {
-  font-size: 20px;
-  font-style: italic;
-  font-weight: 600;
-  width: 50%;
-  height: 30px;
-  border-radius: 10px;
-  gap: 2rem;
-  border: solid 2px black;
-}
-.new-contact textarea {
+.form__field {
   display: flex;
-
-  font-size: 20px;
-  font-style: italic;
-  font-weight: 600;
-  border-radius: 16px;
-  border: solid 2px black;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
 }
-.new-contact-buttom {
-  border-radius: 10px;
-  width: 50%;
+.form__input {
   font-size: 25px;
+  font-weight: 700;
+  font-family: "Dancing Script", cursive;
+  padding: 15px 35px 15px 15px;
+  border-radius: 10px;
+  background-color: #fefafa;
+  color: #2c3e50;
+  outline: none;
+  border: none;
+  width: 350px;
+  margin: 5px 0px;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 90px #252525 inset !important;
+}
+input:-webkit-autofill {
+  -webkit-text-fill-color: #fff !important;
+}
+.form__submit__btn {
+  font-size: 2rem;
+  background: rgb(143, 250, 3); /* fallback for old browsers */
+  background: -webkit-linear-gradient(135deg, #cb5eee 0%, #4be1ec 100%);
+  background: linear-gradient(135deg, #cefb06 0%, rgb(76, 78, 78) 100%);
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 350px;
+}
+.form__submit__btn:hover {
+  background: -webkit-linear-gradient(135deg, #497ce9 0%, #39d22b 100%);
+  background: linear-gradient(135deg, #e94949 0%, #d2552b 100%);
+}
+.form__field.error input {
+  border: 1px solid #dc3545;
+}
+
+.form__field small {
+  color: #dc3545;
+  max-width: 350px;
+  text-align: center;
+  display: none;
+}
+
+.form__field.success input {
+  border: 1px solid #28a745;
+}
+
+#form__error {
+  color: #dc3545;
+  font-size: 1rem;
+  margin: 8px 0px;
+  max-width: 350px;
+  text-align: center;
+}
+
 #miEmail {
   opacity: 0;
 }
+
 #footer {
   background: linear-gradient(to right, #bdc3c7, #2c3e50);
   display: flex;

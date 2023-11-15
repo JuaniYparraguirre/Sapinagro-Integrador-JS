@@ -396,10 +396,10 @@
   .new-contact {
     justify-content: center;
   }
-
-  .new-contact form {
-    width: 100%;
-    flex-direction: column;
-    align-items: start;
+  .form__input {
+    width: 300px;
+  }
+  .form__submit__btn {
+    width: 300px;
   }
 }
