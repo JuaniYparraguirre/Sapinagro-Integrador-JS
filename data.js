@@ -10,27 +10,27 @@ const productsData = [
   },
   {
     id: 2,
-    name: "Diego Maradona",
+    name: "Sembradora gurisa",
     bid: 5.89,
-    user: "kirik8",
+    user: "De grano fino",
     category: "gimetal",
 
     cardImg: "./assets/img/products/diego.png",
   },
   {
     id: 3,
-    name: "L10nel Messi",
+    name: "Tolva autodescagable",
     bid: 4.89,
-    user: "FD10S",
+    user: "2ejes y 3ejes",
     category: "ascanelli",
 
     cardImg: "./assets/img/products/beardedmessi.png",
   },
   {
     id: 4,
-    name: "M. Schumacher",
+    name: "Cargadora de cereal y fertilizantes",
     bid: 3.67,
-    user: "Urastream",
+    user: "Motor a exploción o hidraulico",
     category: "procor",
     cardImg: "./assets/img/products/schumacher.png",
   },

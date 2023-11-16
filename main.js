@@ -113,7 +113,7 @@ const renderProducts = (productList) => {
 //Funcion para cambiar el estado de los botones de las categorias
 const changeBtnActiveState = (selectedCategory) => {
   const categories = [...categoriesList];
-  console.log(appState);
+
   categories.forEach((categoryBtn) => {
     if (categoryBtn.dataset.category !== selectedCategory) {
       categoryBtn.classList.remove("active");
