@@ -6,7 +6,7 @@ const productsData = [
     user: "16 Surcos a 52,5cm",
     category: "allochis",
 
-    cardImg: "./assets/img/products/goldenmessi.png",
+    cardImg: "./img/maicero.jpg",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const productsData = [
     user: "De grano fino",
     category: "gimetal",
 
-    cardImg: "./assets/img/products/diego.png",
+    cardImg: "./img/Sembradora-gimetal-gurisa.jpg",
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const productsData = [
     user: "2ejes y 3ejes",
     category: "ascanelli",
 
-    cardImg: "./assets/img/products/beardedmessi.png",
+    cardImg: "./img/TOLVA-26-TN-ascanelli-2020.png",
   },
   {
     id: 4,
@@ -32,7 +32,7 @@ const productsData = [
     bid: 3.67,
     user: "Motor a exploción o hidraulico",
     category: "procor",
-    cardImg: "./assets/img/products/schumacher.png",
+    cardImg: "./img/chimangos-procor.jpg",
   },
 ];
 

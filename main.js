@@ -71,7 +71,7 @@ const saveCart = () => {
 const createProductTemplate = (product) => {
   const { id, name, bid, user, cardImg } = product;
   return `<div class="product">
-  <img src="${cardImg}" alt="${name}" />
+  <img class="product-img" src="${cardImg}" alt="${name}" />
   
   <!-- contenedor para la info -->
   <div class="product-info">
