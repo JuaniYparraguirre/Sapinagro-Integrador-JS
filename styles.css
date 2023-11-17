@@ -148,7 +148,9 @@ header {
   border: 0.5px solid var(--electric);
   width: 100%;
 }
-
+.cart-label {
+  cursor: pointer;
+}
 .cart-total {
   display: flex;
   justify-content: space-between;
